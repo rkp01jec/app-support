@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1d">
+  <meta name="description" content="Support for SNFlow, a calm night-time companion with a clock and ambient sounds.">
+  <title>SNFlow · Support</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f5f7ff;
+      --muted: #aeb8d1;
+      --dim: #7f8ba8;
+      --night: #080d1d;
+      --panel: rgba(20, 29, 57, .76);
+      --line: rgba(186, 204, 245, .15);
+      --gold: #f6c177;
+      --gold-light: #ffe5b8;
+      --blue: #9cc9ff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse 70% 48% at 50% -12%, #263e72 0%, transparent 70%),
+        radial-gradient(circle at 92% 45%, rgba(68, 78, 145, .2), transparent 28rem),
+        var(--night);
+      color: var(--ink);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: var(--gold-light); text-underline-offset: 4px; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 5px;
+      border-radius: 5px;
+    }
+
+    .wrap { width: min(100% - 40px, 1040px); margin: auto; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+    }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 1.1rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-decoration: none;
+    }
+    .moon {
+      position: relative;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 28px rgba(246, 193, 119, .3);
+    }
+    .moon::after {
+      position: absolute;
+      top: -4px;
+      left: 9px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #101a36;
+      content: "";
+    }
+    nav { display: flex; gap: 26px; }
+    nav a { color: var(--muted); font-size: .92rem; text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+      align-items: center;
+      gap: 70px;
+      min-height: 480px;
+      padding: 55px 0 75px;
+    }
+    .eyebrow {
+      margin: 0 0 15px;
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 750;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    h1, h2, p { margin-top: 0; }
+    h1 {
+      max-width: 690px;
+      margin-bottom: 22px;
+      font-size: clamp(3.2rem, 7vw, 5.8rem);
+      letter-spacing: -.07em;
+      line-height: .98;
+    }
+    .lead { max-width: 600px; color: var(--muted); font-size: 1.15rem; }
+    .hero-art {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 270px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: linear-gradient(150deg, rgba(47, 68, 117, .58), rgba(16, 24, 51, .42));
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .24);
+    }
+    .hero-art::before, .hero-art::after {
+      position: absolute;
+      border-radius: 50%;
+      content: "";
+    }
+    .hero-art::before {
+      top: 28px;
+      right: 32px;
+      width: 6px;
+      height: 6px;
+      background: var(--gold-light);
+      box-shadow: -135px 46px 0 1px #d0defe, -93px -16px 0 0 #fff, -180px 125px 0 0 #d0defe;
+    }
+    .hero-art::after {
+      width: 132px;
+      height: 132px;
+      background: var(--gold);
+      box-shadow: 0 0 70px rgba(246, 193, 119, .2);
+    }
+    .clock {
+      position: relative;
+      z-index: 1;
+      margin-top: 3px;
+      color: #101a36;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -.08em;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 28px 32px;
+      border: 1px solid rgba(246, 193, 119, .28);
+      border-radius: 20px;
+      background: linear-gradient(110deg, rgba(246, 193, 119, .13), rgba(20, 29, 57, .82));
+    }
+    h2 { margin-bottom: 10px; font-size: 1.35rem; line-height: 1.2; }
+    .contact p, .privacy p { margin-bottom: 0; color: var(--muted); }
+    .button {
+      flex: 0 0 auto;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #121a2f;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .faq-section { padding: 94px 0 0; }
+    .section-title { margin-bottom: 25px; }
+    .section-title h2 { font-size: 2rem; }
+    .faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    details {
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--panel);
+      transition: border-color .2s ease, background .2s ease;
+    }
+    details[open] { border-color: rgba(246, 193, 119, .38); background: rgba(30, 43, 82, .86); }
+    summary { cursor: pointer; font-weight: 700; list-style-position: outside; }
+    summary::marker { color: var(--gold); }
+    details p { margin: 13px 0 0; color: var(--muted); }
+
+    .privacy {
+      margin-top: 92px;
+      padding: 28px 0 0;
+      border-top: 1px solid var(--line);
+    }
+    footer { padding: 58px 0 65px; color: var(--dim); font-size: .9rem; }
+    footer p { margin: 0; }
+
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 28px, 1040px); }
+      header { padding: 20px 0; }
+      nav { gap: 14px; }
+      .hero { grid-template-columns: 1fr; gap: 38px; min-height: 0; padding: 66px 0 48px; }
+      h1 { font-size: clamp(3.1rem, 16vw, 5rem); }
+      .hero-art { min-height: 210px; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 24px; }
+      .faq { grid-template-columns: 1fr; }
+      .faq-section { padding-top: 68px; }
+    }
+    @media (max-width: 430px) {
+      nav a:first-child { display: none; }
+      h1 { font-size: 3.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="wordmark" href="./support.html" aria-label="SNFlow support home"><span class="moon" aria-hidden="true"></span>SNFLOW</a>
+      <nav aria-label="Support navigation">
+        <a href="#faq">FAQ</a>
+        <a href="./privacy-policy.html">Privacy policy</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Support center</p>
+          <h1 id="page-title">Settle into a quieter night.</h1>
+          <p class="lead">SNFlow is your simple night-time companion: a readable clock, calming ambient sounds, volume control, and a sleep timer.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true"><span class="clock">23:48</span></div>
+      </section>
+
+      <section class="contact" aria-labelledby="contact-title">
+        <div>
+          <h2 id="contact-title">Need a hand?</h2>
+          <p>Ask a question or report a problem through the SNFlow support forum.</p>
+        </div>
+        <a class="button" href="https://github.com/rkp01jec/SNFlow/issues">Contact support <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section id="faq" class="faq-section" aria-labelledby="faq-title">
+        <div class="section-title">
+          <p class="eyebrow">Common questions</p>
+          <h2 id="faq-title">Frequently asked questions</h2>
+        </div>
+        <div class="faq">
+          <details open><summary>How do I start a sound?</summary><p>Open SNFlow and tap a sound icon. Tap the active sound again to pause it, or select another sound to switch playback.</p></details>
+          <details><summary>How do I set a sleep timer?</summary><p>Choose 15, 30, 60, or 120 minutes below the volume control. Playback stops when the countdown reaches zero.</p></details>
+          <details><summary>Why can’t I hear anything?</summary><p>Check the device volume and mute switch, then try another sound. SNFlow includes its audio files and does not need an internet connection for playback.</p></details>
+          <details><summary>Can I change the clock style?</summary><p>Tap the clock or the “Change font” control to cycle through the available clock styles.</p></details>
+          <details><summary>How do I adjust the volume?</summary><p>Use the in-app Volume slider to adjust SNFlow’s playback level. The device’s volume buttons and mute switch still affect what you hear.</p></details>
+          <details><summary>What should I include in a support request?</summary><p>Tell us your iPhone model, iOS version, SNFlow version, and the steps that reproduce the problem. Please do not include private or sensitive information.</p></details>
+        </div>
+      </section>
+
+      <section class="privacy" aria-labelledby="privacy-title">
+        <h2 id="privacy-title">Privacy and data</h2>
+        <p>SNFlow does not require an account. Audio is played locally from bundled files, and the app does not collect or transmit personal information or use advertising and third-party analytics. Read the full <a href="./privacy-policy.html">privacy policy</a>.</p>
+      </section>
+    </main>
+
+    <footer><p>SNFlow · SleepNightFlow</p></footer>
+  </div>
+</body>
+</html>
