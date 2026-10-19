@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Support and privacy information for Traffic Unjam.">
+  <title>Traffic Unjam Support</title>
+  <style>
+    :root { color-scheme: light; --ink: #202a36; --muted: #65717d; --accent: #d45145; --wash: #fff0ed; --line: #f0dcd8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: #fcfaf9; font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: #a9322b; font-weight: 700; }
+    main { width: min(100% - 40px, 820px); margin: 0 auto; padding: 56px 0 72px; }
+    .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2 { line-height: 1.2; letter-spacing: -.03em; }
+    h1 { margin: 10px 0; font-size: clamp(2.5rem, 8vw, 4rem); }
+    h2 { margin-top: 42px; }
+    .lede { color: var(--muted); font-size: 1.15rem; }
+    .card, details { border: 1px solid var(--line); border-radius: 14px; background: white; }
+    .card { margin: 28px 0; padding: 20px 24px; }
+    .faq { display: grid; gap: 12px; }
+    details { padding: 0 20px; }
+    summary { padding: 17px 0; cursor: pointer; font-weight: 750; }
+    details p { margin: 0; padding: 0 0 18px; color: var(--muted); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); }
+    @media (max-width: 600px) { main { width: min(100% - 28px, 820px); padding-top: 38px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Traffic Unjam · Parking puzzle</p>
+    <h1>Support</h1>
+    <p class="lede">Slide cars along their lanes, clear a path, and drive the red car through the exit.</p>
+
+    <div class="card">
+      <strong>How to play</strong>
+      <p>Drag a car along its lane: horizontal cars move left or right, and vertical cars move up or down. Cars cannot pass through each other. Move the red car to the opening on the right to finish the level.</p>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Why can’t I move a car through another car?</summary><p>Cars are restricted to their lane and cannot overlap or pass through another car. Move the blocking cars along their lanes to create room.</p></details>
+      <details><summary>How do I finish a level?</summary><p>Clear the lane in front of the red car, then slide it through the exit at the right edge of the board.</p></details>
+      <details><summary>How are levels and scores saved?</summary><p>Your level progress and score are saved locally on your device. If you use Game Center, leaderboard scores are submitted to Apple.</p></details>
+      <details><summary>How can I report a problem?</summary><p><a href="https://github.com/rkp01jec/app-support/issues">Contact support through the repository issues page</a>. Mention Traffic Unjam and include your device and iOS version, the steps to reproduce the issue, and what happened. Do not include passwords or other sensitive information.</p></details>
+    </div>
+
+    <h2>Privacy</h2>
+    <p>The game stores level progress and score on your device. It does not use ads or analytics. If you sign in to Apple Game Center, Apple handles your player identity and any leaderboard submissions under its own privacy terms. Read the <a href="privacy-policy.html">Traffic Unjam Privacy Policy</a>.</p>
+
+    <footer><a href="../index.html">All app support</a> · <a href="privacy-policy.html">Privacy Policy</a></footer>
+  </main>
+</body>
+</html>
